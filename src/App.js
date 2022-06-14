@@ -2,7 +2,7 @@
 //Require your dependencies here
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Load here your components
@@ -16,9 +16,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Switch>
-            <Route path='/' component={Home}/>
-        </Switch>
+        <Routes>
+            <Route path='/' element={<Home/>}/>
+        </Routes>
       </Router>
     );
   }

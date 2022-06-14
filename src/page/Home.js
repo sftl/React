@@ -7,13 +7,14 @@ import Media from '../components/Media';
 import PartnerList from '../components/PartnerList';
 import Team from '../components/Team';
 import TeamMember from '../components/TeamMember';
+import Template from '../components/Template';
+
 
 export default class Home extends Component {
     render() {
         return (
             <>
-            <h1>dsadasdsa</h1>
-
+            <Template/>
             <Header/>
             <Jumbotron/>
             <PartnerList/>
