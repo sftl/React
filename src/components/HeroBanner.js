@@ -28,7 +28,7 @@ export default function HeroBanner(props) {
     const image = css`
         display: block;
         height: auto;
-        margin-top: 2rem;
+        margin: 2rem auto 0 auto;
         max-width: 100%;`
 
     return (
