@@ -1,1 +1,102 @@
-@import-normalize;
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter.ttf') format('truetype');
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+html {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+body {
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+}
+a {
+    text-decoration: none;
+}
+.Container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+.Pad {
+    padding: 1.25rem;
+}
+.PadL {
+    padding-left: 1.25rem;
+}
+.PadT {
+    padding-top: 1.25rem;
+}
+.PadR {
+    padding-right: 1.25rem;
+}
+.PadB {
+    padding-bottom: 1.25rem;
+}
+.PadV {
+    padding: 1.25rem 0;
+}
+.PadH {
+    padding: 0 1.25rem;
+}
+
+/*768px*/
+@media screen and (min-width: 48rem) {
+    .Container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 4.25rem;
+        padding-right: 4.25rem;
+    }
+    .PadT {
+        padding-top: 2rem;
+    }
+    .PadB {
+        padding-bottom: 2rem;
+    }
+}
+
+/*1024px*/
+@media screen and (min-width: 64rem) {
+    .Container {
+        padding-left: 0;
+        padding-right: 0;
+        width: 60rem;
+    }
+    .PadT {
+        padding-top: 3rem;
+    }
+    .PadB {
+        padding-bottom: 3rem;
+    }
+}
+
+/*1200px*/
+@media screen and (min-width: 75rem) {
+    .Container {
+        width: 70rem;
+    }
+}

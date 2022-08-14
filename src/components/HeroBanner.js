@@ -1,51 +1,29 @@
-//THE BELOW COMMENT IS REQUIRED TO MAKE emotion/react WORK!!!!
+//THE BELOW COMMENT IS REQUIRED TO MAKE emotion/react WORK!!!! and avoid the awrning: 'You have tried to stringify object
+//returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but
+//rather handed to emotion so it can handle it (e.g. as value of `css` prop).'
 //https://www.digitalocean.com/community/tutorials/react-react-emotion
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'; //Adding css with emotion/react
+import {css} from '@emotion/react'
+import styles from './HeroBanner.styles'
 
 export default function HeroBanner(props) {
     if (Object.keys(props).length === 0) {
-        return;
+        return
     }
-    const title = css`
-        color: #353535;
-        font-size: 1.5625rem;
-        line-height: 1.2;
-        margin-bottom: 0.75rem;
-        @media screen and (min-width: 75rem) {
-            margin-bottom: 1rem;
-        }`
-    const anchor = css`
-        background-color: #000;
-        border-radius: 5rem;
-        color: #fff;
-        display: inline-block;
-        font-weight: bold;
-        margin-bottom: 0.75rem;
-        padding: .75rem .75rem;
-        text-decoration: none;
-        text-decoration: none;`
-    const image = css`
-        display: block;
-        height: auto;
-        margin: 2rem auto 0 auto;
-        max-width: 100%;`
 
     return (
-        <>
-        <div css = {css`text-align: center;`}>
-            <div css = {css`
-                @media screen and (min-width: 64rem) {
-                    margin: 0 auto;
-                    width: 50%;
-                }`}>
-                <h3 css = {title}>{props.title}</h3>
-                <p css = {css`margin-bottom: 1.25rem;`}>{props.content}</p>
-                <a href = {props.actionhref} target='_blank' rel='noreferrer' css = {anchor}>{props.actiontext}</a>
-                <p css = {css`color: #aeaeae; display:block; font-size: 0.8rem; margin: 0 auto; `}>{props.subtitle}</p>
+        <div css={css`text-align: center;`}>
+            <div css={styles.body}>
+                <h3 css={styles.title}>{props.title}</h3>
+                <p css={css`margin-bottom: 1.25rem;`}>{props.content}</p>
+                <a href={props.actionhref} target='_blank' rel='noreferrer' css={styles.anchor}>
+                    {props.actiontext}
+                </a>
+                {props.subtitle && <p css={styles.subtitle}>{props.subtitle}</p>}
             </div>
-            <img alt = {props.banner} src = {process.env.PUBLIC_URL + 'img/' + props.banner} css = {image}/>
+            {props.banner && (
+                <img alt={props.banner} src={process.env.PUBLIC_URL + 'img/' + props.banner} css={styles.banner} />
+            )}
         </div>
-        </>
-    );
+    )
 }
